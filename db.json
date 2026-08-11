@@ -1,0 +1,66 @@
+{
+  "users": [
+    {
+      "name": "علی",
+      "email": "aliasgharebrahimzadef@gmail.com",
+      "password": "13881388",
+      "id": "kvfkxLu0kas",
+      "avatarUrl": ""
+    }
+  ],
+  "tasks": [
+    {
+      "userId": "kvfkxLu0kas",
+      "title": "نئمئمنئمن",
+      "dueDate": "",
+      "priority": "medium",
+      "status": "done",
+      "description": "",
+      "reminder": "30",
+      "createdAt": "2026-07-30T10:39:02.422Z",
+      "id": "0KksNHHR6TI"
+    },
+    {
+      "userId": "kvfkxLu0kas",
+      "title": "نمممنئکمئمکئمکئک",
+      "dueDate": "2026-07-30T20:30:00.000Z",
+      "priority": "medium",
+      "status": "done",
+      "description": "",
+      "reminder": "30",
+      "createdAt": "2026-07-30T11:07:05.621Z",
+      "id": "WhtxHpZ4RHw"
+    }
+  ],
+  "events": [
+    {
+      "userId": "kvfkxLu0kas",
+      "title": "gym",
+      "date": "",
+      "startTime": "10:00",
+      "endTime": "11:30",
+      "allDay": false,
+      "location": "",
+      "reminder": "30",
+      "color": "#6366F1",
+      "description": "",
+      "createdAt": "2026-07-31T09:44:06.877Z",
+      "id": "fXRb2RnbJU8"
+    },
+    {
+      "userId": "kvfkxLu0kas",
+      "title": "l",
+      "date": "",
+      "startTime": "10:00",
+      "endTime": "11:30",
+      "allDay": false,
+      "location": "",
+      "reminder": "30",
+      "color": "#6366F1",
+      "description": "",
+      "createdAt": "2026-07-31T10:34:47.228Z",
+      "id": "StxVibo_Vmw"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
