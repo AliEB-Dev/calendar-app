@@ -3,7 +3,7 @@ import  SettingIconBadge  from "./SettingIconBadge"
 import type {SettingToggleItemProps} from './types/index'
 function SettingToggleItem({icon,iconBg,iconColor,title,subtitle,checked,onChange,isLast}:SettingToggleItemProps) {
   return (
-    <div className= {`w-full flex items-center justify-between py-3 ${
+    <div className= {`w-full flex items-center justify-between py-3 px-2 ${
         !isLast ? "border-b border-gray-100" : ""
     }`} onClick={() => onChange(!checked)}>
         <div className="flex items-center gap-3">

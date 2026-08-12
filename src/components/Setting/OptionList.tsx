@@ -23,7 +23,7 @@ function OptionList({options,selectedValue,onSelect}: OptionListProps){
                 const Icon = option.icon
                 return (
                 <button key={option.value} type="button" onClick={()=>onSelect(option.value)} 
-                className="flex items-center my-2 gap-2 pr-5 pl-4 py-2.5 rounded-xl w-full border border-gray-200 hover:bg-gray-50">
+                className="flex items-center my-2 gap-2 pr-5 pl-4 py-2.5 rounded-xl w-full hover:bg-gray-50 mx-1">
                     {Icon && <Icon size={18} className="text-gray-400"/>}
                     <span className="text-sm text-gray-600">{t(option.labelKey)}</span>
                         

@@ -4,6 +4,9 @@
 :root {
   --Primary: #5E7C5A;
   --color-primary-light: #C9D8B6;
+  --PrimaryGlass: rgba(94, 124, 90, 0.25);
+--Header-Glass: rgba(94, 124, 90, 0.15);
+  --Glass-Border: rgba(94, 124, 90, 0.25);
 
   --color-background: #FAF9F6;
   --color-surface: #FFFFFF;
