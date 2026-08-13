@@ -6,8 +6,8 @@ import RemindersSection from "../components/Setting/RemindersSection"
 import SettingHeader from "../components/Setting/SettingHeader"
 
 function Setting() {
-  return (
-    <AuthGate>
+return (
+  <AuthGate>
     <div className="w-full min-h-screen px-4 pb-24">
       <SettingHeader/>
       <GeneralSection/>
@@ -15,8 +15,8 @@ function Setting() {
       <DataBackupSection/>
       <OtherSection/>
     </div>
-    </AuthGate>
-  )
+  </AuthGate>
+)
 }
 
 export default Setting

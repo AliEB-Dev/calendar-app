@@ -161,5 +161,19 @@
     "wednesday": "Wednesday",
     "thursday": "Thursday",
     "friday": "Friday"
+  },
+  "minutesBefore": {
+    "five": "5 minutes before",
+    "ten": "10 minutes before",
+    "fifteen": "15 minutes before",
+    "thirty": "30 minutes before",
+    "sixty": "1 hour before"
+  },
+  "repeat": {
+    "once": "Once",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "yearly": "Yearly"
   }
 }

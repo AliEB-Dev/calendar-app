@@ -27,30 +27,36 @@ const daysOfWeek:Option[] = [
   {value: "friday",labelKey:"daysOfWeek.friday"}
 ];
 
+
+type OpenItem = "language" | "appearance" | "firstDay" | null;
+
 function GeneralSection() {
   const {t,i18n} = useTranslation();
-  const [isLanguageOpen,setIsLanguageOpen] = useState(false);
-  const [isAppearanceOpen, setIsAppearanceOpen] = useState(false);
-  const [isFirstDayOpen, setIsFirstDayOpen] = useState(false);
+  const [openItem, setOpenItem] = useState<OpenItem>(null);
 
 
   const [appearance, setAppearance] = useState("light");
   const [firstDay, setFirstDay] = useState("saturday");
 
   const [NotificationEnabled, setNotificationsEnabled] = useState(true);
+
+  const handleToggle = (item: Exclude<OpenItem, null>) => {
+    setOpenItem((prev) => (prev === item ? null : item));
+  };
+
   const handleSelectLanguage = (code: string) => {
     i18n.changeLanguage(code)
-    setIsLanguageOpen(false)
+    setOpenItem(null)
   }
 
   const handleSelectAppearance = (value:string)=>{
     setAppearance(value);
-    setIsAppearanceOpen(false)
+    setOpenItem(null)
   }
 
    const handleSelectFirstDay = (value: string) => {
     setFirstDay(value);
-    setIsFirstDayOpen(false);
+    setOpenItem(null)
   };
   return (
     <SettingSection title={t("settings.general")}>
@@ -60,7 +66,8 @@ function GeneralSection() {
         iconColor="var(--color-text)" 
         title={t("settings.language")} 
         subtitle={i18n.language === "fa"? t("settings.languagePersian"): t("settings.languageEnglish")} 
-        isopen={isLanguageOpen} onClick={() => setIsLanguageOpen((prev) => !prev)}
+        isopen={openItem === "language"}
+        onClick={() => handleToggle("language")}
         >
           <OptionList options={languages} selectedValue={i18n.language} onSelect={handleSelectLanguage} />
         </SettingItem>
@@ -71,8 +78,8 @@ function GeneralSection() {
          iconColor="var(--color-text)" 
          title={t("settings.appearance")} 
          subtitle={t("settings.lightMode")}
-        isopen={isAppearanceOpen}
-        onClick={() => setIsAppearanceOpen((prev) => !prev)} >
+        isopen={openItem === "appearance"}
+        onClick={()=> handleToggle("appearance")} >
           <OptionList options={appearances} selectedValue={appearance} onSelect={handleSelectAppearance} />
         </SettingItem>
 
@@ -91,8 +98,8 @@ function GeneralSection() {
         iconColor="var(--color-text)" 
         title={t("settings.firstDayOfWeek")} 
         subtitle={t("settings.saturday")} 
-        isopen= {isFirstDayOpen}
-        onClick={()=> setIsFirstDayOpen((prev)=> !prev)}
+        isopen= {openItem === "firstDay"}
+        onClick={() => handleToggle("firstDay")}
         isLast >
           <OptionList options={daysOfWeek} selectedValue={firstDay} onSelect={handleSelectFirstDay} />
         </SettingItem>

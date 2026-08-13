@@ -159,5 +159,19 @@
     "wednesday": "چهارشنبه",
     "thursday": "پنجشنبه",
     "friday": "جمعه"
+  },
+  "minutesBefore": {
+    "five": "۵ دقیقه قبل",
+    "ten": "۱۰ دقیقه قبل",
+    "fifteen": "۱۵ دقیقه قبل",
+    "thirty": "۳۰ دقیقه قبل",
+    "sixty": "۱ ساعت قبل"
+  },
+  "repeat": {
+    "once": "یک بار",
+    "daily": "روزانه",
+    "weekly": "هفتگی",
+    "monthly": "ماهانه",
+    "yearly": "سالانه"
   }
 }

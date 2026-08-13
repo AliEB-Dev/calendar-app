@@ -25,7 +25,7 @@ function SettingItem({ icon, iconBg, iconColor, title, subtitle, onClick, isLast
           size={16}
         />
       </button>
-      {isopen && children && (<div className="pb-2">{children}</div>)}
+      {isopen && children && (<div className="pb-2 px-2">{children}</div>)}
     </div>
   )
 }
