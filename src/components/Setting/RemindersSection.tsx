@@ -66,7 +66,7 @@ function RemindersSection() {
        isopen={openItem === "repeat"}
        onClick={() => handleToggle("repeat")}
        isLast >
-        <OptionList options={repeatOptions} selectedValue={selectedRepeat} onSelect={setSelectedReminderTime}/>
+        <OptionList options={repeatOptions} selectedValue={selectedRepeat} onSelect={setSelectedRepeat}/>
        </SettingItem>
 
     </SettingSection>
