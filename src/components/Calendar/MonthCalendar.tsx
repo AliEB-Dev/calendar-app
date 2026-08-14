@@ -8,6 +8,7 @@ import {
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import CalendarHeader from "./CalendarHeader";
+import useDirection from "../../hooks/useDirection";
 
 interface Props {
   currentDate: Date;
@@ -16,7 +17,8 @@ interface Props {
 
 function MonthCalendar({currentDate,setCurrentDate}: Props) {
       
-      const days = getMonthCalendar(currentDate);
+  const days = getMonthCalendar(currentDate);
+  const {isRTL }= useDirection()
 
   return (
     <div className="bg-white rounded-xl p-2 ">
@@ -29,7 +31,7 @@ function MonthCalendar({currentDate,setCurrentDate}: Props) {
             <button 
               onClick={()=> setCurrentDate(previousMonth(currentDate))}
               className="p-2 rounded-lg hover:bg-gray-100">
-                    <FaChevronRight/>
+                    {isRTL ? <FaChevronRight /> : <FaChevronLeft />}
             </button>
 
              <h2 className="font-bold text-lg">
@@ -39,7 +41,7 @@ function MonthCalendar({currentDate,setCurrentDate}: Props) {
               onClick={() => setCurrentDate(nextMonth(currentDate))}
               className="p-2 rounded-lg hover:bg-gray-100"
              >
-                <FaChevronLeft />
+                {isRTL ? <FaChevronLeft /> : <FaChevronRight />}
             </button>
         </div>
 
@@ -53,7 +55,7 @@ function MonthCalendar({currentDate,setCurrentDate}: Props) {
                          {day}
                     </div>
                 ))}
-      </div>
+        </div>
 
       {/* Calendar */}
 

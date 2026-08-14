@@ -2,13 +2,13 @@ import { useEffect, useMemo, useState } from "react";
 import ReminderFilterBar, { type ReminderFilter } from "../components/Reminder/ReminderFilterBar";
 import ReminderDayList from "../components/Reminder/ReminderDayList";
 import ReminderHeader from "../components/Reminder/ReminderHeader";
-import AuthGate from "../components/auth/AuthGate";
 import { useStats } from "../hooks/useStatsCard";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { fetchTasks, updateTaskStatus } from "../store/slices/tasksSlice";
 import { fetchEvents } from "../store/slices/eventsSlice";
 import { buildAgendaItems, filterAgendaItems, groupAgendaByDay } from "../utils/agenda";
 import HomeStatCard from "../components/StatCard/StatCard";
+import { Navigate } from "react-router-dom";
 
 export default function ReminderPage() {
   const [filter, setFilter] = useState<ReminderFilter>("all");
@@ -26,12 +26,17 @@ export default function ReminderPage() {
     }
   }, [dispatch, currentUser]);
 
+  
   const groups = useMemo(() => {
     const items = buildAgendaItems(tasks, events);
     const filtered = filterAgendaItems(items, filter);
     return groupAgendaByDay(filtered);
   }, [tasks, events, filter]);
 
+  if (!currentUser) {
+    return <Navigate to="/login" replace />
+  }
+  
   const handleToggle = (id: string) => {
     console.log("TOGGLE CLICKED", id)
     const task = tasks.find((t) => t.id === id);
@@ -43,9 +48,10 @@ export default function ReminderPage() {
       })
     );
   };
-
+  
+ 
   return (
-    <AuthGate>
+    
       <div className="p-2 mb-15">
         <ReminderHeader />
         <ReminderFilterBar selected={filter} onChange={setFilter} />
@@ -65,6 +71,5 @@ export default function ReminderPage() {
 
         <ReminderDayList groups={groups} onToggle={handleToggle} />
       </div>
-    </AuthGate>
   );
 }

@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import type { IconType } from "react-icons";
 
+export type ArrowType = "navigate" | "down";
+
 export interface SettingIconBadgeProps {
   icon: IconType
   bg: string
@@ -16,6 +18,7 @@ export interface SettingItemProps {
     onClick ?: ()=> void
     isLast ?: boolean
     isopen?: boolean
+    arrow?: ArrowType;
     children ?: ReactNode
 }
 

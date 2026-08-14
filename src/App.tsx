@@ -7,6 +7,9 @@ import Setting from './page/Setting'
 import MainLayout from './layouts/MainLayout'
 import Register from './page/Register'
 import Login from './page/Login'
+import Privacy from './page/Privacy'
+import Help from './page/Help'
+import About from './page/About'
 
 function App() {
 
@@ -14,6 +17,9 @@ function App() {
     <Routes>
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
+          <Route path="/about" element={<About />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/help" element={<Help />} />
           
         <Route element={<MainLayout/>}>
           <Route path='/' element={<Home/>}/>

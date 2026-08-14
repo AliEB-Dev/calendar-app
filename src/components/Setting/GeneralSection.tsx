@@ -62,31 +62,33 @@ function GeneralSection() {
     <SettingSection title={t("settings.general")}>
         <SettingItem 
         icon={IoIosGlobe} 
-        iconBg="#EDE9FE" 
-        iconColor="var(--color-text)" 
+        iconBg="#E8EEF7"
+        iconColor="#4F6B8A"
         title={t("settings.language")} 
         subtitle={i18n.language === "fa"? t("settings.languagePersian"): t("settings.languageEnglish")} 
         isopen={openItem === "language"}
+        arrow="down"
         onClick={() => handleToggle("language")}
         >
           <OptionList options={languages} selectedValue={i18n.language} onSelect={handleSelectLanguage} />
         </SettingItem>
 
         <SettingItem 
-        icon={IoIosColorPalette}
-         iconBg="#EDE9FE" 
-         iconColor="var(--color-text)" 
+         icon={IoIosColorPalette}
+         iconBg="#E8EEF7"
+         iconColor="#4F6B8A"
          title={t("settings.appearance")} 
          subtitle={t("settings.lightMode")}
         isopen={openItem === "appearance"}
+        arrow="down"
         onClick={()=> handleToggle("appearance")} >
           <OptionList options={appearances} selectedValue={appearance} onSelect={handleSelectAppearance} />
         </SettingItem>
 
         <SettingToggleItem 
           icon={IoIosNotifications}
-          iconBg="#EDE9FE"
-          iconColor="var(--color-text)"
+          iconBg="#E8EEF7"
+          iconColor="#4F6B8A"
           title={t("settings.notifications")}
           subtitle={""}
           checked={NotificationEnabled}
@@ -94,11 +96,12 @@ function GeneralSection() {
       />
         <SettingItem 
         icon={IoIosCalendar} 
-        iconBg="#EDE9FE" 
-        iconColor="var(--color-text)" 
+        iconBg="#E8EEF7"
+        iconColor="#4F6B8A"
         title={t("settings.firstDayOfWeek")} 
         subtitle={t("settings.saturday")} 
         isopen= {openItem === "firstDay"}
+        arrow="down"
         onClick={() => handleToggle("firstDay")}
         isLast >
           <OptionList options={daysOfWeek} selectedValue={firstDay} onSelect={handleSelectFirstDay} />

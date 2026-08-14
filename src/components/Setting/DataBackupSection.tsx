@@ -12,6 +12,7 @@ function DataBackupSection() {
       iconBg="#DBEAFE" 
       iconColor="#2563EB" 
       title={t("settings.backup")}
+      arrow="navigate"
       subtitle={t("settings.lastBackup")} />
 
       <SettingItem 
@@ -19,7 +20,8 @@ function DataBackupSection() {
       iconBg="#DBEAFE" 
       iconColor="#2563EB" 
       title={t("settings.restore")}
-      subtitle={t("settings.restoreSubtitle")}/>
+      subtitle={t("settings.restoreSubtitle")}
+      arrow="navigate"/>
 
       <SettingItem 
       icon={IoIosTrash} 
@@ -27,6 +29,7 @@ function DataBackupSection() {
       iconColor="#DC2626" 
       title={t("settings.deleteAll")} 
       subtitle={t("settings.deleteAllSubtitle")}
+      arrow="navigate"
       isLast />
 
     </SettingSection>

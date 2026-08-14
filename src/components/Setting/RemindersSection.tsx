@@ -43,6 +43,7 @@ function RemindersSection() {
       title={t("settings.reminderNotifications")}
        subtitle={t("settings.reminderNotificationsSubtitle")}
         checked={reminderEnabled}
+       
         onChange={setReminderEnabled}
       />
       <SettingItem
@@ -52,6 +53,7 @@ function RemindersSection() {
         title= {t("settings.defaultReminderTime")}
         subtitle={t("settings.minutesBefore")}  
         isopen={openItem === "reminderTime"}
+        arrow="down"
         onClick={()=> handleToggle("reminderTime")}   
       >
           <OptionList options={minutesBefore} selectedValue={selectedReminderTime} onSelect={setSelectedReminderTime}/>      
@@ -64,6 +66,7 @@ function RemindersSection() {
        title={t("settings.defaultRepeat")} 
        subtitle={t("settings.once")} 
        isopen={openItem === "repeat"}
+       arrow="down"
        onClick={() => handleToggle("repeat")}
        isLast >
         <OptionList options={repeatOptions} selectedValue={selectedRepeat} onSelect={setSelectedRepeat}/>

@@ -75,7 +75,10 @@
     "profileEmail": "Email",
     "saveChanges": "Save Changes",
     "removeProfile":"Remove profile",
-    "changeProfile":"change Profile"
+    "changeProfile":"change Profile",
+    "logoutConfirmText": "Are you sure you want to log out?",
+    "logoutConfirm": "Log out",
+    "cancel": "Cancel"
   },
   "home": {
     "greeting": "Hello, {{name}}!",
@@ -175,5 +178,42 @@
     "weekly": "Weekly",
     "monthly": "Monthly",
     "yearly": "Yearly"
+  },
+  "privacy": {
+    "title": "Privacy & Security",
+    "lastUpdated": "Last updated: August 14, 2026",
+    "yourPrivacyTitle": "Your Privacy",
+    "yourPrivacyText": "Your privacy is important to us. This app aims to manage your information securely and transparently while keeping control of your data in your hands.",
+    "dataCollectionTitle": "Data Collection",
+    "dataCollectionText": "This app only stores information that is necessary to provide its core features. Unnecessary personal information is not collected or shared with third parties.",
+    "dataStorageTitle": "Data Storage",
+    "dataStorageText": "Some information may be stored locally on your device. This data remains under your control and can be managed or deleted through the app settings.",
+    "securityTitle": "Data Security",
+    "securityText": "We take reasonable measures to protect the information stored by the app. However, no method of storing or transmitting information is completely risk-free.",
+    "changesTitle": "Changes to This Policy",
+    "changesText": "This privacy policy may be updated in the future to reflect new app features or legal requirements. The last updated date is shown at the top of this page."
+  },
+  "help" : {
+    "title": "Help & Support",
+    "description": "A guide to using the application and support information.",
+    "lorem" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+    "gettingStartedTitle": "Getting Started",
+    "calendarTitle": "Calendar",
+    "remindersTitle": "Reminders",
+    "settingsTitle": "Settings",
+    "contactTitle": "Contact Support"
+  },
+  "about": {
+    "nameApp": "MyCalendar",
+    "subtitle": "A practice project for learning and improving frontend development skills",
+    "projectTitle": "About the Project",
+    "projectText": "Calendar is a personal practice project created to learn and improve frontend development skills. It provides an opportunity to practice React, TypeScript, state management, internationalization, and modern UI design.",
+    "developerTitle": "About the Developer",
+    "developerText": "I'm Ali Ebrahimzade, currently learning and improving my skills in programming and web development. This project is part of my learning journey and was built to gain practical experience and create more real-world projects.",
+    "version": "Version 1.0.0",
+    "connectTitle": "Connect With Me",
+    "developerName": "Ali Ebrahimzadeh",
+    "developerRole": "Frontend Developer",
+    "developerDescription": "Learning, experimenting, and building new projects"
   }
 }
