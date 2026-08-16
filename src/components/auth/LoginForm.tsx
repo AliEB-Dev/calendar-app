@@ -5,11 +5,13 @@ import AuthError from "./AuthError";
 import AuthInput from "./AuthInput";
 import { IoIosMail } from "react-icons/io";
 import PasswordInput from "./PasswordInput";
+import { useTranslation } from "react-i18next";
 
 interface LoginFormProps{
     onSuccess: ()=> void
 }
 function LoginForm({onSuccess} : LoginFormProps) {
+    const {t} = useTranslation();
     const dispatch = useAppDispatch()
     const {status, error} = useAppSelector((state)=> state.auth)
 
@@ -22,11 +24,11 @@ function LoginForm({onSuccess} : LoginFormProps) {
         setLocalError("")
 
         if(!email.trim()){
-            setLocalError("ایمیل را وارد کنید")
+            setLocalError(t("auth.emailPlaceholder"))
             return
         }
         if(!password.trim()){
-            setLocalError("رمز عبور را وارد کنید")
+            setLocalError(t("auth.passwordPlaceholder"))
             return
         }
 
@@ -40,20 +42,20 @@ function LoginForm({onSuccess} : LoginFormProps) {
     <form onSubmit={handleSubmit} className="flex flex-col gap-5">
         <AuthError error={localError|| error || ""} />
         <AuthInput 
-        label="ایمیل"
+        label={t("auth.email")}
         type="email"
         value={email}
         onChange={setEmail}
-        placeholder="ایمیل خود را وارد کنید"
+        placeholder={t("auth.emailPlaceholder")}
         Icon={IoIosMail}
         required
         />
 
         <PasswordInput
-        label="رمز عبور"
+        label={t("auth.password")}
         value={password}
         onChange={setPassword}
-        placeholder="رمز عبور خود را وارد کنید"
+        placeholder={t("auth.passwordPlaceholder")}
         required
         />
 
@@ -62,7 +64,7 @@ function LoginForm({onSuccess} : LoginFormProps) {
         disabled={status === "loading"}
         className="w-full bg-(--Primary) text-white rounded-xl py-3.5 font-bold text-sm disabled:opacity-50 mt-2"
         >
-            {status === "loading" ? "در حال ورود..." : "ورود"}
+            {status === "loading" ? t("auth.registering") : t("auth.login")}
         </button>
 
     </form>

@@ -27,6 +27,8 @@
     "confirmPassword": "Confirm Password",
     "confirmPasswordPlaceholder": "Re-enter your password",
     "agreeTerms": "I agree to the terms and privacy policy",
+    "passwordMismatch": "Passwords do not match",
+    "agreeTermsRequired": "You must agree to the terms and conditions",
     "register": "Sign Up",
     "registering": "Signing up...",
     "haveAccount": "Already have an account?",

@@ -27,6 +27,8 @@
     "confirmPassword": "تکرار رمز عبور",
     "confirmPasswordPlaceholder": "رمز عبور خود را دوباره وارد کنید",
     "agreeTerms": "با شرایط و قوانین و سیاست حریم خصوصی موافقم",
+    "passwordMismatch": "رمز عبور و تکرار آن یکسان نیستند",
+    "agreeTermsRequired": "لازم است شرایط و قوانین را بپذیرید",
     "register": "ثبت‌نام",
     "registering": "در حال ثبت‌نام...",
     "haveAccount": "حساب دارید؟",

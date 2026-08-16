@@ -7,6 +7,8 @@ import SettingToggleItem from "./SettingToggleItem";
 import OptionList from "./OptionList";
 import { IoMoon, IoSunny } from "react-icons/io5";
 import type { Option } from "./OptionList";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { setAppearance, setLanguage, type Appearance, type Language } from "../../store/slices/settingsSlice";
 
 const languages: Option[] = [
   { value: "fa", labelKey: "settings.languagePersian"  },
@@ -33,25 +35,32 @@ type OpenItem = "language" | "appearance" | "firstDay" | null;
 function GeneralSection() {
   const {t,i18n} = useTranslation();
   const [openItem, setOpenItem] = useState<OpenItem>(null);
-
-
-  const [appearance, setAppearance] = useState("light");
   const [firstDay, setFirstDay] = useState("saturday");
-
   const [NotificationEnabled, setNotificationsEnabled] = useState(true);
+
+  const dispatch = useAppDispatch();
+  const appearance = useAppSelector(
+    (state) => state.settings.appearance
+  );
+  const language = useAppSelector(
+  (state) => state.settings.language
+  );
 
   const handleToggle = (item: Exclude<OpenItem, null>) => {
     setOpenItem((prev) => (prev === item ? null : item));
   };
 
   const handleSelectLanguage = (code: string) => {
-    i18n.changeLanguage(code)
-    setOpenItem(null)
+   const newLanguage = code as Language;
+    i18n.changeLanguage(newLanguage);
+    dispatch(setLanguage(newLanguage));
+    setOpenItem(null);
   }
 
   const handleSelectAppearance = (value:string)=>{
-    setAppearance(value);
-    setOpenItem(null)
+    const newAppearance = value as Appearance;
+    dispatch(setAppearance(newAppearance));
+    setOpenItem(null);
   }
 
    const handleSelectFirstDay = (value: string) => {
@@ -65,12 +74,12 @@ function GeneralSection() {
         iconBg="#E8EEF7"
         iconColor="#4F6B8A"
         title={t("settings.language")} 
-        subtitle={i18n.language === "fa"? t("settings.languagePersian"): t("settings.languageEnglish")} 
+        subtitle={language === "fa" ? t("settings.languagePersian") : t("settings.languageEnglish")}
         isopen={openItem === "language"}
         arrow="down"
         onClick={() => handleToggle("language")}
         >
-          <OptionList options={languages} selectedValue={i18n.language} onSelect={handleSelectLanguage} />
+          <OptionList options={languages} selectedValue={language}onSelect={handleSelectLanguage} />
         </SettingItem>
 
         <SettingItem 
@@ -78,7 +87,7 @@ function GeneralSection() {
          iconBg="#E8EEF7"
          iconColor="#4F6B8A"
          title={t("settings.appearance")} 
-         subtitle={t("settings.lightMode")}
+         subtitle={appearance === "light" ? t("settings.lightMode") : t("settings.darkMode")} 
         isopen={openItem === "appearance"}
         arrow="down"
         onClick={()=> handleToggle("appearance")} >

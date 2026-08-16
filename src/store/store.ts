@@ -1,8 +1,9 @@
-import { configureStore } from "@reduxjs/toolkit"
-import modalReducer from "./slices/modalSlice"
-import tasksReducer from "./slices/tasksSlice"
-import eventsReducer from "./slices/eventsSlice"
-import authReducer from "./slices/authSlice"
+import { configureStore } from "@reduxjs/toolkit";
+import modalReducer from "./slices/modalSlice";
+import tasksReducer from "./slices/tasksSlice";
+import eventsReducer from "./slices/eventsSlice";
+import authReducer from "./slices/authSlice";
+import settingsReducer from "./slices/settingsSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     tasks: tasksReducer,
     events: eventsReducer,
     auth: authReducer,
+    settings: settingsReducer,
   },
 })
 

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { getPasswordStrength } from "../../utils/passwordStrength";
 
 interface PasswordStrengthProps{
@@ -7,6 +8,7 @@ interface PasswordStrengthProps{
 const strengthColors = ["bg-gray-200", "bg-rose-400", "bg-orange-400", "bg-emerald-500"]
 
 function PasswordStrength({password}:PasswordStrengthProps) {
+    const {t} = useTranslation()
     const strength = getPasswordStrength(password)
 
     return(
@@ -16,7 +18,7 @@ function PasswordStrength({password}:PasswordStrengthProps) {
                     <span key={i} className={`h-1.5 flex-1 rounded-full ${i< strength ? strengthColors[strength] : "bg-gray-200"}`}/>
                 ))}
             </div>
-            <span className="text-xs text-gray-400 whitespace-nowrap">قدرت رمز عبور:</span>
+            <span className="text-xs text-gray-400 whitespace-nowrap">{t("auth.passwordStrength")}</span>
         </div>
     )
 }

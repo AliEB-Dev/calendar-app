@@ -7,11 +7,13 @@ import { IoIosMail, IoIosPerson } from "react-icons/io"
 import PasswordInput from "./PasswordInput"
 import PasswordStrength from "./PasswordStrength"
 import TermsCheckbox from "./TermsCheckbox"
+import { useTranslation } from "react-i18next"
 
 interface RegisterFormProps{
     onSuccess: ()=> void
 }
 function RegisterForm({onSuccess}: RegisterFormProps) {
+    const { t } = useTranslation()
     const dispatch = useAppDispatch()
     const {status,error} = useAppSelector((state) => state.auth)
 
@@ -27,11 +29,11 @@ function RegisterForm({onSuccess}: RegisterFormProps) {
         setLocalError("")
 
         if(password !== confirmPassword){
-            setLocalError("رمز عبور و تکرار آن یکسان نیستند")
+            setLocalError(t("auth.passwordMismatch"))
             return
         }
         if(!agreed){
-            setLocalError("لازم است شرایط و قوانین را بپذیرید")
+            setLocalError(t("auth.agreeTermsRequired"))
             return
         }
         const result = await dispatch(register({name,email,password}))
@@ -44,41 +46,41 @@ function RegisterForm({onSuccess}: RegisterFormProps) {
     <form onSubmit={handleSubmit} className="flex flex-col gap-2 ">
         {(error || localError) && <AuthError error = {localError || error || ""} />}
         <AuthInput 
-        label="نام و نام خانوادگی"
+        label={t("auth.fullName")}
         type="text"
         value={name}
         onChange={setName}
-        placeholder="نام و نام خانوادگی خود را وارد کنید"
+        placeholder={t("auth.fullNamePlaceholder")}
         Icon={IoIosPerson}
         required
         />
         <AuthInput 
-        label="ایمیل"
+        label={t("auth.email")}
         type="email"
         pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$"
         value={email}
         onChange={setEmail}
-        placeholder="ایمیل خود را وارد کنید"
+        placeholder={t("auth.emailPlaceholder")}
         Icon={IoIosMail}
         required
         />
         <div>
             <PasswordInput 
-            label="رمز عبور"
-          value={password}
-          onChange={setPassword}
-          placeholder="رمز عبور خود را وارد کنید"
-          required
-          minLength={6}
-          />
+                label={t("auth.password")}
+                value={password}
+                onChange={setPassword}
+                placeholder={t("auth.passwordPlaceholder")}
+                required
+                minLength={6}
+            />
             <PasswordStrength password={password}/>
         </div>
 
         <PasswordInput
-        label="تکرار رمز عبور"
+        label={t("auth.confirmPassword")}
         value={confirmPassword}
         onChange={setConfirmPassword}
-        placeholder="رمز عبور خود را دوباره وارد کنید"
+        placeholder={t("auth.confirmPasswordPlaceholder")}
         required
         />
         <TermsCheckbox checked={agreed} onChange={setAgreed}/>
@@ -88,7 +90,7 @@ function RegisterForm({onSuccess}: RegisterFormProps) {
         disabled = {status === "loading"}
         className="w-full bg-(--Primary) text-white rounded-xl py-3.5 font-bold text-sm disabled:opacity-50 mt-2"
         >
-            {status === "loading" ? "در حال ثبت‌نام..." : "ثبت‌نام"}
+            {status === "loading" ? t("auth.registering") : t("auth.register")}
         </button>
 
     </form>
