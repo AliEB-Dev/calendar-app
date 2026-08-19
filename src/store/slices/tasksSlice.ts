@@ -1,4 +1,3 @@
-// store/slices/tasksSlice.ts
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 import type { Task } from "../types/types"
 import {

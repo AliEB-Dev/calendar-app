@@ -1,70 +1,61 @@
-import { FiEdit2 } from "react-icons/fi"
-import {  IoIosArrowDown } from "react-icons/io"
+import { FiCheckCircle, FiEdit2 } from "react-icons/fi"
 import FormField from "./FormField"
 import PrioritySelector from "./PrioritySelector"
 import type { TaskFormData } from "./types"
 import DateField from "./DateField"
+import InputsShared from "./InputsShared"
+import { useTranslation } from "react-i18next"
+import ReminderSelect from "./ReminderSelect"
+import DescriptionField from "./DescriptionField"
 
 interface TaskFormProps {
   data: TaskFormData
   onChange: (data: TaskFormData) => void
 }
 
+const statusOptions = [
+  { "title": "addItem.statusPending", "value": "pending" },
+  { "title": "addItem.statusInProgress", "value": "in-progress" },
+  { "title": "addItem.statusDone", "value": "done" },
+];
 function TaskForm({ data, onChange }: TaskFormProps) {
   const set = <K extends keyof TaskFormData>(key: K, value: TaskFormData[K]) =>
     onChange({ ...data, [key]: value })
-
+  const { t } = useTranslation()
   return (
     <div className="flex flex-col gap-5 ">
-      <FormField label="عنوان">
-        <div className="relative">
-          <input
-            type="text"
-            value={data.title}
-            onChange={(e) => set("title", e.target.value)}
-            placeholder="عنوان وظیفه را وارد کنید"
-            className="w-full border border-gray-200 rounded-xl px-4 py-3 pl-10 text-sm outline-none focus:border-(--Primary)"
-          />
-          <FiEdit2 className="absolute left-3 top-1/2 -translate-y-1/2 text-(--Primary)" size={16} />
-        </div>
-      </FormField>
-
+     <InputsShared
+       label="addItem.itemTitle"
+       type="text" 
+       value={data.title}   
+       onChange={(e) => set("title", e.target.value)} 
+       placeholder={t("addItem.taskTitlePlaceholder")} 
+       Icon={FiEdit2}
+       />
       
         <DateField
-        label="تاریخ سررسید"
+        label={t("addItem.dueDate")}
         value={data.dueDate }
         onChange={(v) => set("dueDate", v)}
         />
-      
 
-      <FormField label="اولویت">
+      <FormField label={t("addItem.priority")}>
         <PrioritySelector value={data.priority} onChange={(p) => set("priority", p)} />
       </FormField>
 
-      <FormField label="وضعیت">
-        <div className="relative">
-          <select
-            value={data.status}
-            onChange={(e) => set("status", e.target.value as TaskFormData["status"])}
-            className="w-full appearance-none border border-gray-200 rounded-xl px-4 py-3 text-xs text-gray-700 outline-none focus:border-(--Primary)"
-          >
-            <option value="pending" >در انتظار</option>
-            <option value="in-progress">در حال انجام</option>
-            <option value="done">انجام‌شده</option>
-          </select>
-          <IoIosArrowDown className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" size={16} />
-        </div>
-      </FormField>
-
-      <FormField label="توضیحات (اختیاری)">
-        <textarea
-          value={data.description}
-          onChange={(e) => set("description", e.target.value)}
-          placeholder="توضیحات وظیفه را بنویسید..."
-          rows={3}
-          className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none resize-none focus:border-(--Primary)"
-        />
-      </FormField>
+      <ReminderSelect 
+        value="addItem.reminder"
+        onChange={(e) => set("reminder", e.target.value)}
+        options={statusOptions}
+        Icon={FiCheckCircle}
+        label="addItem.status"
+      />
+      <DescriptionField
+        label={t("addItem.description")}
+        value={data.description}
+        onChange={(e) => set("description", e.target.value)}
+        placeholder={t("addItem.eventDescriptionPlaceholder")}
+      />
     </div>
   )
 }

@@ -8,7 +8,7 @@ import OptionList from "./OptionList";
 import { IoMoon, IoSunny } from "react-icons/io5";
 import type { Option } from "./OptionList";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { setAppearance, setLanguage, type Appearance, type Language } from "../../store/slices/settingsSlice";
+import { setAppearance, setDaysOfWeek, setLanguage, type Appearance, type DaysOfWeek, type Language } from "../../store/slices/settingsSlice";
 
 const languages: Option[] = [
   { value: "fa", labelKey: "settings.languagePersian"  },
@@ -35,10 +35,13 @@ type OpenItem = "language" | "appearance" | "firstDay" | null;
 function GeneralSection() {
   const {t,i18n} = useTranslation();
   const [openItem, setOpenItem] = useState<OpenItem>(null);
-  const [firstDay, setFirstDay] = useState("saturday");
   const [NotificationEnabled, setNotificationsEnabled] = useState(true);
 
   const dispatch = useAppDispatch();
+
+  const daysofweek = useAppSelector(
+    (state) => state.settings.daysofweek
+  );
   const appearance = useAppSelector(
     (state) => state.settings.appearance
   );
@@ -63,9 +66,10 @@ function GeneralSection() {
     setOpenItem(null);
   }
 
-   const handleSelectFirstDay = (value: string) => {
-    setFirstDay(value);
-    setOpenItem(null)
+  const handleSelectFirstDay = (value: string) => {
+    const newDay = value as DaysOfWeek;
+    dispatch(setDaysOfWeek(newDay));
+    setOpenItem(null);
   };
   return (
     <SettingSection title={t("settings.general")}>
@@ -108,12 +112,12 @@ function GeneralSection() {
         iconBg="#E8EEF7"
         iconColor="#4F6B8A"
         title={t("settings.firstDayOfWeek")} 
-        subtitle={t("settings.saturday")} 
+        subtitle={t(`daysOfWeek.${daysofweek}`)} 
         isopen= {openItem === "firstDay"}
         arrow="down"
         onClick={() => handleToggle("firstDay")}
         isLast >
-          <OptionList options={daysOfWeek} selectedValue={firstDay} onSelect={handleSelectFirstDay} />
+          <OptionList options={daysOfWeek} selectedValue={daysofweek} onSelect={handleSelectFirstDay} />
         </SettingItem>
     </SettingSection>
   )

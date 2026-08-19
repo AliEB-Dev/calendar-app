@@ -1,4 +1,3 @@
-// components/shared/AddItemModal.tsx
 import { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { IoIosClose, IoIosCheckmarkCircle, IoIosCalendar } from "react-icons/io"
@@ -9,6 +8,7 @@ import EventForm from "./EventForm"
 import type { ItemType, TaskFormData, EventFormData } from "./types"
 import { addTask } from "../../store/slices/tasksSlice"
 import { addEvent } from "../../store/slices/eventsSlice"
+import { useTranslation } from "react-i18next"
 
 const initialTask: TaskFormData = {
   title: "",
@@ -41,6 +41,7 @@ function AddItemModal() {
   const [taskData, setTaskData] = useState<TaskFormData>(initialTask)
   const [eventData, setEventData] = useState<EventFormData>(initialEvent)
 
+  const { t } = useTranslation();
   if (!isOpen) return null
 
   const handleClose = () => {
@@ -76,7 +77,6 @@ function AddItemModal() {
           transition={{ duration: 0.20 }}
         >
           <motion.div
-            dir="rtl"
             onClick={(e) => e.stopPropagation()}
             className="w-full max-w-md sm:max-w-10/12  bg-white rounded-t-3xl max-h-[90vh] overflow-y-auto flex flex-col"
             initial={{ y: "100%" }}
@@ -88,7 +88,7 @@ function AddItemModal() {
               <button onClick={handleClose}>
                 <IoIosClose size={26} className="text-gray-400" />
               </button>
-              <h2 className="font-bold text-lg text-gray-800 my-2">افزودن جدید</h2>
+              <h2 className="font-bold text-lg text-gray-800 my-2">{t("addItem.title")}</h2>
             </div>
 
             <div className="px-5">
@@ -128,7 +128,7 @@ function AddItemModal() {
                 disabled={!isValid}
                 className="w-full bg-(--Primary) text-white rounded-xl py-3.5 font-bold text-sm disabled:opacity-40"
               >
-                {type === "task" ? "ذخیره وظیفه" : "ذخیره رویداد"}
+                {type === "task" ? t("addItem.saveTask") : t("addItem.saveEvent")}
               </button>
             </div>
           </motion.div>
