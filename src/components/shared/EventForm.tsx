@@ -64,7 +64,7 @@ function EventForm({ data, onChange }: EventFormProps) {
         Icon={FiMapPin}
       />
       <ReminderSelect 
-        value="addItem.reminder"
+        value={data.reminder}
         onChange={(e) => set("reminder", e.target.value)}
         options={reminderOptions}
         Icon={IoIosNotifications}

@@ -44,8 +44,8 @@ function TaskForm({ data, onChange }: TaskFormProps) {
       </FormField>
 
       <ReminderSelect 
-        value="addItem.reminder"
-        onChange={(e) => set("reminder", e.target.value)}
+        value={data.status}
+        onChange={(e) => set("status",  e.target.value as TaskFormData["status"])}
         options={statusOptions}
         Icon={FiCheckCircle}
         label="addItem.status"

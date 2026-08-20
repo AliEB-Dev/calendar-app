@@ -101,7 +101,7 @@ function AddItemModal() {
                   }`}
                 >
                   <IoIosCalendar size={16} />
-                  رویداد
+                  {t("addItem.reminder")}
                 </button>
                 <button
                   type="button"
@@ -111,7 +111,7 @@ function AddItemModal() {
                   }`}
                 >
                   <IoIosCheckmarkCircle size={16} />
-                  وظیفه
+                  {t("addItem.task")}
                 </button>
               </div>
 
