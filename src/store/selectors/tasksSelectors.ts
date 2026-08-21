@@ -1,7 +1,13 @@
-import { isToday} from "date-fns-jalali";
-import type { RootState } from "../store";
+import { createSelector } from "@reduxjs/toolkit"
+import { isToday } from "date-fns-jalali"
+import type { RootState } from "../store"
 
-export function selectTodayTasks(state:RootState) {
-    return state.tasks.items.filter((t)=> t.dueDate && isToday(new Date(t.dueDate)))
-    .sort((a,b) => a.title.localeCompare(b.title))
-}
+const selectTaskItems = (state: RootState) => state.tasks.items
+
+export const selectTodayTasks = createSelector(
+  [selectTaskItems],
+  (tasks) =>
+    tasks
+      .filter((t) => t.dueDate && isToday(new Date(t.dueDate)))
+      .sort((a, b) => a.title.localeCompare(b.title))
+)

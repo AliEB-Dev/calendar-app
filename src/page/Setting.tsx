@@ -1,5 +1,4 @@
 import { Navigate } from "react-router-dom"
-import DataBackupSection from "../components/Setting/DataBackupSection"
 import GeneralSection from "../components/Setting/GeneralSection"
 import OtherSection from "../components/Setting/OtherSection"
 import RemindersSection from "../components/Setting/RemindersSection"
@@ -17,7 +16,6 @@ return (
       <SettingHeader/>
       <GeneralSection/>
       <RemindersSection/>
-      <DataBackupSection/>
       <OtherSection/>
     </div>
 )
