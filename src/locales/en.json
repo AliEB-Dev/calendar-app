@@ -115,7 +115,7 @@
     "today": "Today",
     "tomorrow": "Tomorrow",
     "itemsCount": "{{count}} items",
-    "noItemsForDay": "Nothing scheduled for this day.",
+    "noItemsForDay": "Nothing scheduled.",
     "minutesBefore": "{{count}} minutes before"
   },
   "addItem": {

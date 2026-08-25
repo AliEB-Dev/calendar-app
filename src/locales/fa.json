@@ -114,7 +114,7 @@
     "today": "امروز",
     "tomorrow": "فردا",
     "itemsCount": "{{count}} مورد",
-    "noItemsForDay": "برای این روز موردی ثبت نشده است.",
+    "noItemsForDay": "   موردی ثبت نشده است.",
     "minutesBefore": "{{count}} دقیقه قبل"
   },
   "addItem": {
