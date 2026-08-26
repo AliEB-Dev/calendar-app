@@ -5,38 +5,16 @@ import { useTranslation } from "react-i18next"
 import { useState } from "react";
 import SettingToggleItem from "./SettingToggleItem";
 import OptionList from "./OptionList";
-import { IoMoon, IoSunny } from "react-icons/io5";
-import type { Option } from "./OptionList";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { setAppearance, setDaysOfWeek, setLanguage, type Appearance, type DaysOfWeek, type Language } from "../../store/slices/settingsSlice";
-
-const languages: Option[] = [
-  { value: "fa", labelKey: "settings.languagePersian"  },
-  { value: "en", labelKey: "settings.languageEnglish" },
-];
-const appearances:Option[] = [
-  { value: "light", labelKey: "settings.lightMode",icon: IoSunny  },
-  { value: "dark", labelKey: "settings.darkMode",icon: IoMoon  },
-];
-
-const daysOfWeek:Option[] = [
-  { value: "saturday", labelKey: "daysOfWeek.saturday" },
-  { value: "sunday", labelKey: "daysOfWeek.sunday" },
-  { value: "monday", labelKey: "daysOfWeek.monday" },
-  {value: "tuesday", labelKey : "daysOfWeek.tuesday"},
-  {value : "wednesday" , labelKey : "daysOfWeek.wednesday"},
-  {value: "thursday",labelKey:"daysOfWeek.thursday"},
-  {value: "friday",labelKey:"daysOfWeek.friday"}
-];
-
+import { setAppearance, setDaysOfWeek, setLanguage, setNotifications, type Appearance, type DaysOfWeek, type Language } from "../../store/slices/settingsSlice";
+import { appearances, daysOfWeek, languages } from "./constants";
 
 type OpenItem = "language" | "appearance" | "firstDay" | null;
 
 function GeneralSection() {
   const {t,i18n} = useTranslation();
   const [openItem, setOpenItem] = useState<OpenItem>(null);
-  const [NotificationEnabled, setNotificationsEnabled] = useState(true);
-
+  
   const dispatch = useAppDispatch();
 
   const daysofweek = useAppSelector(
@@ -46,7 +24,10 @@ function GeneralSection() {
     (state) => state.settings.appearance
   );
   const language = useAppSelector(
-  (state) => state.settings.language
+    (state) => state.settings.language
+  );
+  const notifications = useAppSelector(
+    (state) => state.settings.notifications
   );
 
   const handleToggle = (item: Exclude<OpenItem, null>) => {
@@ -71,6 +52,20 @@ function GeneralSection() {
     dispatch(setDaysOfWeek(newDay));
     setOpenItem(null);
   };
+
+  const handleNotificationsChange = async (enabled : boolean)=> {
+    if (!enabled){
+      dispatch(setNotifications(false));
+      return;
+    }
+
+    if (!("Notification" in window)) {
+      dispatch(setNotifications(false));
+      return;
+    }
+    const permission = await Notification.requestPermission();
+    dispatch(setNotifications(permission === "granted"))
+  }
   return (
     <SettingSection title={t("settings.general")}>
         <SettingItem 
@@ -104,8 +99,8 @@ function GeneralSection() {
           iconColor="#4F6B8A"
           title={t("settings.notifications")}
           subtitle={""}
-          checked={NotificationEnabled}
-          onChange={setNotificationsEnabled}
+          checked={notifications}
+          onChange={handleNotificationsChange}
       />
         <SettingItem 
         icon={IoIosCalendar} 

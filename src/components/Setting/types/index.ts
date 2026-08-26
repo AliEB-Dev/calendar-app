@@ -37,3 +37,11 @@ export interface SettingSectionProps {
   title: string
   children: React.ReactNode
 }
+export type EditProfileFormProps = {
+  name: string
+  email: string
+  onNameChange: (value: string) => void
+  onSave: () => void
+  onRemoveAvatar: () => void
+  onChangeAvatar: () => void
+}

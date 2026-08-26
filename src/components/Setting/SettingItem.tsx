@@ -5,7 +5,6 @@ import useDirection from "../../hooks/useDirection";
 
 
 function SettingItem({ icon, iconBg, iconColor, title, subtitle, onClick, isLast, isopen ,arrow, children }: SettingItemProps) {
-  
   const {isRTL} = useDirection()
   return (
     <div className={`mt-1 ${!isLast ? "border-b border-gray-50" : ""} ${isopen? "bg-(--PrimaryGlass) rounded-xl  border-1 overflow-hidden":""} `}

@@ -9,7 +9,6 @@ import useDirection from "../../hooks/useDirection";
 import Swal from "sweetalert2";
 import DeleteAllData from "./DeleteAllData";
 
-
 function OtherSection() {
   const {t } = useTranslation();
   const dispatch = useAppDispatch();
@@ -40,15 +39,7 @@ function OtherSection() {
       <SettingItem icon={IoIosHelpCircle} iconBg="#E8EFE6" iconColor="#6B7A2F" title={t("settings.helpSupport")} subtitle={t("settings.helpSupportSubtitle")} arrow="navigate" onClick={() => navigate("/help")} />
       <SettingItem icon={IoIosInformationCircle} iconBg="#E8EFE6" iconColor="#6B7A2F" title={t("settings.about")} subtitle={t("settings.version")} arrow="navigate" onClick={() => navigate("/about")}/>
       <DeleteAllData/>
-      <SettingItem
-        icon={IoIosLogOut}
-        iconBg="#FEE2E2"
-        iconColor="#DC2626"
-        title={t("settings.logout")} 
-        subtitle={t("settings.logoutSubtitle")}
-        onClick={handleLogout}
-        isLast
-      />
+      <SettingItem icon={IoIosLogOut} iconBg="#FEE2E2" iconColor="#DC2626" title={t("settings.logout")}  subtitle={t("settings.logoutSubtitle")} onClick={handleLogout} isLast/>
    </SettingSection>
   )
 }

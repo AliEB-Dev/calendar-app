@@ -1,13 +1,5 @@
 import { useTranslation } from "react-i18next"
-
-type EditProfileFormProps = {
-  name: string
-  email: string
-  onNameChange: (value: string) => void
-  onSave: () => void
-  onRemoveAvatar: () => void
-  onChangeAvatar: () => void
-}
+import type { EditProfileFormProps } from "./types"
 
 function EditProfileForm({name,email,onNameChange,onSave,onRemoveAvatar,onChangeAvatar}:EditProfileFormProps) {
   const { t } = useTranslation()
