@@ -27,10 +27,10 @@ function Home() {
   return (
     <>
     
-    <div className="w-full h-screen p-2 pt-5 mb-15">
+    <div className="w-full h-screen p-2 pt-5  dark:bg-(--bg-dark) dark:text-(--color-text-bgdark)">
       <header>
         <WelcomeCard/>
-        <div className='flex gap-2 mt-7 mr-2 justify-center'>
+        <div className='flex gap-2 mt-7 mr-2 justify-center '>
           {
             homeStats.map((item,index)=>(
             <StatCard

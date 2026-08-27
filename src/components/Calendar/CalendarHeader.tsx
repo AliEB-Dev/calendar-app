@@ -25,7 +25,7 @@ function CalendarHeader({ currentDate, onYearChange }: Props) {
   }
 
   return (
-    <header className="relative flex items-center justify-between p-5 h-14 bg-(--Primary) text-white rounded-t-3xl md:mx-5">
+    <header className="relative flex items-center justify-between p-5 h-14 bg-(--Primary) text-white rounded-t-3xl md:mx-5 dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark) dark:border-b">
       <button
         type="button"
         onClick={() => dispatch(openAddItemModal("event"))}

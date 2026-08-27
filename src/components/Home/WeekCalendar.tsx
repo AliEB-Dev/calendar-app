@@ -4,7 +4,7 @@ export default function WeekCalendar(){
     const week = getCurrentWeek();
 
     return (
-         <div className="flex justify-between ">
+         <div className="flex justify-between">
       {week.map((item, index) => (
         <div
           key={index}
@@ -17,7 +17,7 @@ export default function WeekCalendar(){
           <span
             className={`w-10/12 rounded-2xl py-2  flex justify-center ${
               item.isToday
-                ? "bg-[#6B7A2F] text-white"
+                ? "bg-(--Primary) text-white"
                 : "hover:bg-gray-100"
             }`}
           >

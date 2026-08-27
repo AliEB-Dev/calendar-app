@@ -8,7 +8,7 @@ function HomeCalendarSection() {
     const today = getTodayString();
     const { t } = useTranslation();
   return (
-    <section className="mt-4 bg-white p-3 rounded-2xl shadow-2xs md:mx-3">
+    <section className="mt-4 bg-white p-3 rounded-2xl shadow-2xs md:mx-3 dark:bg-(--bg-item-dark)">
        
       <div className="flex justify-between mb-4 text-[14px]">
         <div className="flex gap-1">

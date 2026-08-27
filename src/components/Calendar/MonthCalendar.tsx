@@ -21,7 +21,7 @@ function MonthCalendar({currentDate,setCurrentDate}: Props) {
   const {isRTL }= useDirection()
 
   return (
-    <div className="bg-white rounded-xl p-2 ">
+    <div className="bg-(--bg-item-light) rounded-xl p-2 dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark)">
         <CalendarHeader 
           currentDate={currentDate}
           onYearChange={setCurrentDate}
@@ -59,15 +59,18 @@ function MonthCalendar({currentDate,setCurrentDate}: Props) {
 
       {/* Calendar */}
 
-      <div className="grid grid-cols-7 gap-2 md:mx-5">
+      <div className="grid grid-cols-7 gap-2 md:mx-5 ">
             {days.map((day) => (
-                <div className={`h-15 justify-center flex items-center rounded-lg border p-2 transition
+                <div className={`h-15 justify-center flex items-center rounded-lg p-2 transition
                     ${
                         day.isToday
-                            ? "bg-[#6B7A2F] text-white border-[#6B7A2F]"
+                            ? "bg-(--Primary) text-white "
                             : day.isCurrentMonth
-                            ? "bg-white border-gray-200 hover:border-[#6B7A2F]"
-                            : "bg-gray-50 text-gray-400 border-gray-200"
+                            ? 
+                            `bg-(--bg-item-light) hover:bg-(--bg-item-light-hover) hover:border dark:bg-(--bg-item-dark) 
+                            dark:text-(--color-text-bgdark) dark:hover:bg-(--bg-item-dark-hover)
+                            `
+                            : "bg-gray-200 text-gray-400  dark:bg-gray-700 dark:text-(--color-text-bgdark)"
                     }
                 `} 
                 key={day.date.toISOString()}>

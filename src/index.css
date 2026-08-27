@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@custom-variant dark (&:where(.dark, .dark *));
 @font-face {
     font-family: "Vazir";
     src: url("./assets/fonts/vazir-thin.woff2") format("woff2");
@@ -43,13 +43,14 @@
 
 
 :root {
-  --Primary: #5E7C5A;
+  --Primary: #64c957;
   --color-primary-light: #C9D8B6;
   --PrimaryGlass: rgba(94, 124, 90, 0.25);
 --Header-Glass: rgba(94, 124, 90, 0.15);
   --Glass-Border: rgba(94, 124, 90, 0.25);
-
-  --color-background: #FAF9F6;
+  --bg-item-light: #FFFFFF;
+  --bg-item-light-hover: #F3F4F6;
+  --bg-light: #FAF9F6;
   --color-surface: #FFFFFF;
 
   --color-text: #1E1E1E;
@@ -59,9 +60,17 @@
   --color-success: #4F9D69;
   --color-warning: #D89B3D;
   --color-error: #D65A5A;
+  --bg-dark : black;
+  --color-text-bgdark : white;
+  --bg-item-dark : #1F2937;
+  --bg-item-dark: #1F2937;
+  --bg-item-dark-hover: #374151;
   font-family: "Vazir", sans-serif;
 }
 
 body{
-    background-color: #F8F7F4;
+    background-color: var(--bg-light);
+}
+.dark body{
+    background-color: var(--bg-dark);
 }
