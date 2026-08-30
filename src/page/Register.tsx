@@ -7,7 +7,7 @@ function Register() {
   const navigate = useNavigate()
   const { t } = useTranslation()
   return (
-    <div className="min-h-screen flex flex-col justify-center px-6 bg-white items-center">
+    <div className="min-h-screen flex flex-col justify-center px-6 bg-white items-center ">
       <AuthHeaderActions/>
       <div className="w-full max-w-sm">
         <h1 className="text-2xl font-bold text-gray-800 mb-2">{t("auth.registerTitle")}</h1>

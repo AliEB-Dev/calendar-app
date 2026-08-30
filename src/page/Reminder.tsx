@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import ReminderFilterBar, { type ReminderFilter } from "../components/Reminder/ReminderFilterBar";
 import ReminderDayList from "../components/Reminder/ReminderDayList";
-import ReminderHeader from "../components/Reminder/ReminderHeader";
 import { useStats } from "../hooks/useStatsCard";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { fetchTasks, updateTaskStatus } from "../store/slices/tasksSlice";
@@ -9,6 +8,8 @@ import { fetchEvents } from "../store/slices/eventsSlice";
 import { buildAgendaItems, filterAgendaItems, groupAgendaByDay } from "../utils/agenda";
 import HomeStatCard from "../components/StatCard/StatCard";
 import { Navigate } from "react-router-dom";
+import HeaderPage from "../components/Reminder/HeaderPage";
+import { IoCalendarOutline } from "react-icons/io5";
 
 export default function ReminderPage() {
   const [filter, setFilter] = useState<ReminderFilter>("all");
@@ -53,7 +54,7 @@ export default function ReminderPage() {
   return (
     
       <div className="p-2 mb-15">
-        <ReminderHeader />
+        <HeaderPage isSearch Icon={IoCalendarOutline} title="reminder.pageTitle"/>
         <ReminderFilterBar selected={filter} onChange={setFilter} />
 
         

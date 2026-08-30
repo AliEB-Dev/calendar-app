@@ -60,10 +60,9 @@
   --color-success: #4F9D69;
   --color-warning: #D89B3D;
   --color-error: #D65A5A;
-  --bg-dark : black;
+  --bg-dark : #1F2937;
   --color-text-bgdark : white;
-  --bg-item-dark : #1F2937;
-  --bg-item-dark: #1F2937;
+  --bg-item-dark :  #111827;
   --bg-item-dark-hover: #374151;
   font-family: "Vazir", sans-serif;
 }

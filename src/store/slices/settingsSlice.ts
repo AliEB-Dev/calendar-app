@@ -12,6 +12,7 @@ interface SettingsState {
 
 
 const savedAppearance = localStorage.getItem("appearance") as Appearance | null;
+
 const savedLanguage = localStorage.getItem("language") as Language | null;
 const savedDaysofWeek = localStorage.getItem("daysofweek") as DaysOfWeek | null;
 const savedNotifications = localStorage.getItem("notifications");
@@ -19,6 +20,10 @@ const savedNotifications = localStorage.getItem("notifications");
 const initialAppearance: Appearance =
     savedAppearance || "light"
 
+document.documentElement.classList.toggle(
+    "dark",
+    initialAppearance === "dark"
+);
 const initialNotifications = savedNotifications === null ? true : savedNotifications === "true"
 
 const initialState: SettingsState = {
