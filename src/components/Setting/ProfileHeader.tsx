@@ -36,7 +36,7 @@ function ProfileHeader() {
         setIsExpanded(false)
     }
     return (
-      <div className="w-full bg-white rounded-2xl shadow-sm overflow-hidden">
+      <div className="w-full rounded-2xl shadow-sm overflow-hidden bg-(--bg-item-light) dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark)">
         <button type="button" onClick={() => setIsExpanded((prev) => !prev)} className="w-full p-4 flex items-center justify-between" >
           <div className="flex items-center gap-3">
             <div className="relative">

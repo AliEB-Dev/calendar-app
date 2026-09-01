@@ -23,9 +23,9 @@ function OptionList({options,selectedValue,onSelect}: OptionListProps){
                 const Icon = option.icon
                 return (
                 <button key={option.value} type="button" onClick={()=>onSelect(option.value)} 
-                className="flex items-center my-2 gap-2 px-3 py-2.5 rounded-xl w-full hover:bg-gray-50 ">
+                className="flex items-center my-2 gap-2 px-3 py-2.5 rounded-xl w-full hover:bg-gray-50 dark:hover:bg-(--bg-item-dark-hover)">
                     {Icon && <Icon size={18} className="text-gray-400"/>}
-                    <span className="text-sm text-gray-600">{t(option.labelKey)}</span>
+                    <span className="text-sm text-gray-600 dark:text-(--color-text-bgdark)">{t(option.labelKey)}</span>
                         
                         {selectedValue === option.value && (
                             <IoIosCheckmark size={20}className="text-(--Primary)"/>

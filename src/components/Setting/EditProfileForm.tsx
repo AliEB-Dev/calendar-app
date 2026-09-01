@@ -4,14 +4,14 @@ import type { EditProfileFormProps } from "./types"
 function EditProfileForm({name,email,onNameChange,onSave,onRemoveAvatar,onChangeAvatar}:EditProfileFormProps) {
   const { t } = useTranslation()
     return(
-      <div className="px-4 pb-4 flex flex-col gap-3 border-t border-gray-100 pt-4 ">
+      <div className="px-4 pb-4 flex flex-col gap-3 border-t border-gray-100 dark:border-gray-700 pt-4 bg-(--bg-item-litht) dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark)">
         <div className="flex flex-col gap-1">
           <label className="text-xs text-gray-500">{t("settings.profileName")}</label>
           <input
             type="text"
             value={name}
             onChange={(e) => onNameChange(e.target.value)}
-            className="border border-gray-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-(--Primary)"
+            className="border dark:border-gray-500 rounded-xl px-3 py-2 text-sm outline-none focus:border-(--Primary)"
           />
         </div>
 
@@ -21,7 +21,7 @@ function EditProfileForm({name,email,onNameChange,onSave,onRemoveAvatar,onChange
             type="email"
             value={email}
             disabled
-            className="border border-gray-200 rounded-xl px-3 py-2 text-sm bg-gray-50 text-gray-400"
+            className=" rounded-xl px-3 py-2 text-sm bg-gray-50 text-gray-400 dark:bg-(--bg-item-dark-hover)"
           />
         </div>
         <div className="flex gap-5 justify-center ">

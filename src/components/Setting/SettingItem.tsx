@@ -3,21 +3,20 @@ import SettingIconBadge from "./SettingIconBadge"
 import type { SettingItemProps } from "./types/index"
 import useDirection from "../../hooks/useDirection";
 
-
 function SettingItem({ icon, iconBg, iconColor, title, subtitle, onClick, isLast, isopen ,arrow, children }: SettingItemProps) {
   const {isRTL} = useDirection()
   return (
-    <div className={`mt-1 ${!isLast ? "border-b border-gray-50" : ""} ${isopen? "bg-(--PrimaryGlass) rounded-xl  border-1 overflow-hidden":""} `}
+    <div className={`text-gray-800 mt-1 bg-(--bg-item-light) dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark) ${!isLast ? "border-b border-gray-50" : ""} ${isopen? "bg-(--PrimaryGlass) rounded-xl  border-1 overflow-hidden":""} `}
     style={{ borderColor: "var(--Glass-Border)" }}>
       <button onClick={onClick}
         className={`w-full flex items-center justify-between py-3 px-1 text-right 
           ${isopen? "bg-(--Header-Glass) w-full":""}
-         ${!isLast ? "border-b border-gray-100" : ""}`}>
+         ${!isLast ? "border-b border-gray-100 dark:border-gray-700" : ""} `}>
         <div className="flex items-center  w-full gap-3 justify-start ">
           <SettingIconBadge icon={icon} bg={iconBg} color={iconColor} />
           <div className="flex flex-col  items-start ">
-            <span className="text-sm font-bold text-gray-800">{title}</span>
-            <span className= "text-xs text-gray-500">{subtitle}</span>
+            <span className="text-sm font-bold ">{title}</span>
+            <span className= "text-xs text-gray-500 dark:text-gray-400">{subtitle}</span>
           </div>
         </div>
         {arrow === "down" && (
