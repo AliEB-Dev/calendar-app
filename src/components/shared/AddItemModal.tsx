@@ -78,17 +78,17 @@ function AddItemModal() {
         >
           <motion.div
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-md sm:max-w-10/12  bg-white rounded-t-3xl max-h-[90vh] overflow-y-auto flex flex-col"
+            className="w-full max-w-md sm:max-w-10/12  bg-(--bg-item-light) rounded-t-3xl max-h-[90vh] overflow-y-auto flex flex-col dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark)"
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
           >
-            <div className="flex items-center justify-between px-5 pt-5 pb-2 sticky top-0 bg-white z-10 ">
+            <div className="flex items-center justify-between px-5 pt-5 pb-2 sticky top-0 bg-(--bg-item-light) z-10 text-gray-800 dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark)">
               <button onClick={handleClose}>
                 <IoIosClose size={26} className="text-gray-400" />
               </button>
-              <h2 className="font-bold text-lg text-gray-800 my-2">{t("addItem.title")}</h2>
+              <h2 className="font-bold text-lg  my-2">{t("addItem.title")}</h2>
             </div>
 
             <div className="px-5">
@@ -97,7 +97,7 @@ function AddItemModal() {
                   type="button"
                   onClick={() => setType("event")}
                   className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-bold transition-colors ${
-                    type === "event" ? "bg-(--Primary) text-white" : "text-gray-400"
+                    type === "event" ? "bg-(--Primary) text-(--bg-item-light)" : "text-gray-400"
                   }`}
                 >
                   <IoIosCalendar size={16} />
@@ -107,7 +107,7 @@ function AddItemModal() {
                   type="button"
                   onClick={() => setType("task")}
                   className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-bold transition-colors ${
-                    type === "task" ? "bg-(--Primary) text-white" : "text-gray-400 bg-gray-100"
+                    type === "task" ? "bg-(--Primary) text-(--bg-item-light)" : "text-gray-400 bg-gray-100"
                   }`}
                 >
                   <IoIosCheckmarkCircle size={16} />
@@ -122,11 +122,11 @@ function AddItemModal() {
               )}
             </div>
 
-            <div className="px-5 py-5 sticky bottom-0 bg-white">
+            <div className="px-5 py-5 sticky bottom-0 ">
               <button
                 onClick={handleSubmit}
                 disabled={!isValid}
-                className="w-full bg-(--Primary) text-white rounded-xl py-3.5 font-bold text-sm disabled:opacity-40"
+                className="w-full bg-(--Primary) text-(--bg-item-light) rounded-xl py-3.5 font-bold text-sm disabled:opacity-40 "
               >
                 {type === "task" ? t("addItem.saveTask") : t("addItem.saveEvent")}
               </button>

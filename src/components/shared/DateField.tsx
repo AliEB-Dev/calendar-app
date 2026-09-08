@@ -28,17 +28,17 @@ function DateField({ label, value, onChange }: DateFieldProps) {
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
-          className="w-full flex items-center justify-between border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700"
+          className="w-full flex items-center justify-between border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-sm text-gray-700"
         >
           <IoIosArrowDown className="text-gray-400" size={16} />
-          <span className="flex items-center gap-2">
+          <span className="flex items-center gap-2 dark:text-gray-300">
             {displayValue || "انتخاب تاریخ"}
             <IoIosCalendar className="text-gray-400" size={18} />
           </span>
         </button>
 
         {isOpen && (
-          <div className="absolute z-20 mt-2 w-full bg-white border border-gray-200 rounded-xl p-4 shadow-lg">
+          <div className="absolute z-20 mt-2 w-full dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark) dark:border-gray-700 border border-gray-200 rounded-xl p-4 shadow-lg">
             <PersianCalendar
               viewDate={viewDate}
               selectedDate={selectedDate}

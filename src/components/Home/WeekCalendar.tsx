@@ -18,7 +18,7 @@ export default function WeekCalendar(){
             className={`w-10/12 rounded-2xl py-2  flex justify-center ${
               item.isToday
                 ? "bg-(--Primary) text-white"
-                : "hover:bg-gray-100"
+                : "hover:bg-gray-100 dark:hover:bg-(--bg-item-dark-hover)"
             }`}
           >
             {item.day}

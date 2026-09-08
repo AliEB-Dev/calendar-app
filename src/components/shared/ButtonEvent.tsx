@@ -12,12 +12,12 @@ function ButtonEvent({data,labelTitle}:ButtonEventProps) {
         <FormField label={t(`${labelTitle}`)}>
           <button
             type="button"
-            className="w-full flex items-center justify-between border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700"
+            className="w-full flex items-center justify-between border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-700 dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark) dark:border-gray-700"
           >
-            <IoIosArrowDown className="text-gray-400" size={16} />
+            <IoIosArrowDown  size={16} />
             <span className="flex items-center gap-2">
               {data.endTime}
-              <IoIosTime className="text-gray-400" size={18} />
+              <IoIosTime size={18} />
             </span>
           </button>
         </FormField>

@@ -26,7 +26,7 @@ function ReminderSelect({value,onChange,options,Icon,label}:ReminderSelectProps)
           <select
             value={value}
             onChange={onChange}
-            className={`w-full appearance-none border border-gray-200 rounded-xl ${isRTL ? "pr-10 pl-4" : "pl-10 pr-4"} py-3 text-sm text-gray-700 outline-none focus:border-(--Primary)`
+            className={`w-full appearance-none border border-gray-200 rounded-xl ${isRTL ? "pr-10 pl-4" : "pl-10 pr-4"} py-3 text-sm text-gray-700  dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark) dark:border-gray-700 outline-none focus:border-(--Primary)`
 }          >
             {options.map((item)=> (
               <option value={item.value}>{t(`${item.title}`)}</option>

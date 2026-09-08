@@ -26,12 +26,12 @@ function PersianCalendar({
   const days = getMonthCalendar(viewDate)
   const today = startOfDay(new Date())
   return (
-    <div className="w-full" dir="rtl">
+    <div className="w-full text-black text-gray-400  dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark) " dir="rtl">
       <div className="flex items-center justify-between mb-3">
         <button
           type="button"
           onClick={() => onViewDateChange(nextMonth(viewDate))}
-          className="p-1 text-gray-400 hover:text-(--Primary)"
+          className="p-1 hover:text-(--Primary)"
         >
           <IoIosArrowForward size={18} />
         </button>
@@ -41,7 +41,7 @@ function PersianCalendar({
         <button
           type="button"
           onClick={() => onViewDateChange(previousMonth(viewDate))}
-          className="p-1 text-gray-400 hover:text-(--Primary)"
+          className="p-1 hover:text-(--Primary)"
         >
           <IoIosArrowBack size={18} />
         </button>
@@ -49,7 +49,7 @@ function PersianCalendar({
 
       <div className="grid grid-cols-7 gap-1 mb-1">
         {weekDays.map((d) => (
-          <span key={d} className="text-[11px] text-gray-400 text-center font-bold">
+          <span key={d} className="text-[13px] text-center font-bold">
             {d}
           </span>
         ))}
@@ -70,9 +70,9 @@ function PersianCalendar({
       onClick={() => !isDisabled && onSelectDate(d.date)}
       className={`w-8 h-8 rounded-full text-xs flex items-center justify-center transition-colors ${
         isDisabled
-          ? "text-gray-300 cursor-not-allowed"
+          ? "text-gray-400 cursor-not-allowed"
           : isSelected
-          ? "bg-(--Primary) text-white font-bold"
+          ? "bg-(--bg-item-dark) dark:bg-(--bg-item-light) dark:text-black text-white font-bold"
           : d.isToday
           ? "text-white bg-(--Primary) font-bold"
           :""

@@ -11,7 +11,7 @@ interface MenuItemProps {
 function MenuItem({ titleKey, path, icon: Icon }: MenuItemProps) {
   const {t} = useTranslation();
   return (
-    <li className="flex flex-col flex-1 items-center text-[15px] hover:bg-gray-100 md:text-xl  " >
+    <li className="flex flex-col flex-1 items-center text-[15px] hover:bg-gray-100 md:text-xl dark:hover:bg-(--bg-item-dark-hover)  " >
       <NavLink
         to={path}
         className="flex flex-col items-center gap-1"

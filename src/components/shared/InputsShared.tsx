@@ -16,13 +16,13 @@ function InputsShared({label,type,value,onChange,placeholder,Icon}:InputsSharedP
     const { t } = useTranslation();
     return (
        <FormField label={t(`${label}`)}>
-        <div className="relative">
+        <div className="relative ">
           <input
             type={type}
             value={value}
             onChange={onChange}
             placeholder={t(`${placeholder}`)}
-            className="w-full border border-gray-200 rounded-xl px-4 py-3 pl-10 text-sm outline-none focus:border-(--Primary)"
+            className="w-full border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 pl-10 text-sm outline-none focus:border-(--Primary)"
           />
           <Icon className="absolute left-3 top-1/2 -translate-y-1/2 text-(--Primary)" size={16} />
         </div>

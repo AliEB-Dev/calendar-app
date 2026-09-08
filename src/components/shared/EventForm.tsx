@@ -52,7 +52,7 @@ function EventForm({ data, onChange }: EventFormProps) {
       </div>
 
       <div className="flex items-center justify-between">
-        <span className="text-sm font-bold text-gray-700">{t("addItem.allDay")}</span>
+        <span className="text-sm font-bold">{t("addItem.allDay")}</span>
         <ToggleSwitch checked={data.allDay} onChange={(v) => set("allDay", v)} />
       </div>
       <InputsShared

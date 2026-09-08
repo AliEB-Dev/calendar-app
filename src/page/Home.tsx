@@ -27,7 +27,7 @@ function Home() {
   return (
     <>
     
-    <div className="w-full h-screen p-2 pt-5  dark:bg-(--bg-dark) dark:text-(--color-text-bgdark)">
+    <div className="w-full h-screen p-2 pt-5  dark:bg-(--bg-dark) dark:text-(--color-text-bgdark) mb-10">
       <header>
         <WelcomeCard/>
         <div className='flex gap-2 mt-7 mr-2 justify-center '>

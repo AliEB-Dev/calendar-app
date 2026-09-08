@@ -15,7 +15,7 @@ function DescriptionField({label,value,onChange,placeholder}:DescriptionFieldPro
           onChange={onChange}
           placeholder={placeholder}
           rows={3}
-          className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none resize-none focus:border-(--Primary)"
+          className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none resize-none focus:border-(--Primary) dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark) mb-10 dark:border-gray-700"
         />
       </FormField>
     )
