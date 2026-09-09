@@ -9,17 +9,17 @@ function Login() {
   const { t } = useTranslation();
   return (
     
-    <div className="min-h-screen flex flex-col justify-center px-6 bg-white items-center">
+    <div className="min-h-screen text-gray-800 flex flex-col justify-center px-6 bg-white items-center dark:bg-(--bg-dark) dark:text-(--color-text-bgdark)">
       <AuthHeaderActions/>
       <div className="w-full max-w-sm">
-        <h1 className="text-2xl font-bold text-gray-800 mb-2">{t("auth.loginTitle")}</h1>
+        <h1 className="text-2xl font-bold  mb-2">{t("auth.loginTitle")}</h1>
         <p className="text-sm text-gray-400 mb-8">
             {t("auth.loginSubtitle")}
         </p>
 
         <LoginForm onSuccess={() => navigate("/")} />
 
-          <div className="mt-6 text-center text-sm text-gray-500">
+          <div className="mt-6 text-center text-sm text-gray-500 dark:text-(--color-text-bgdark)">
               {t("auth.noAccount")}{" "}
               <Link
                 to="/register"

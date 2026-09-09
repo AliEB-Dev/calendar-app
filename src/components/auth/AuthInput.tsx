@@ -15,7 +15,7 @@ interface AuthInputProps {
 function AuthInput({label,type,value,onChange,placeholder,Icon,required,minLength,pattern}:AuthInputProps) {
     return (
         <div className="flex flex-col gap-2">
-            <label className="text-sm font-bold text-gray-700">{label}</label>
+            <label className="text-sm font-bold text-gray-700 dark:text-(--color-text-bgdark)">{label}</label>
             <div className="relative">
                 <input 
                 type={type} 

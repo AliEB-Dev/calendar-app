@@ -39,7 +39,7 @@ function LoginForm({onSuccess} : LoginFormProps) {
         }
     }
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-5 ">
         <AuthError error={localError|| error || ""} />
         <AuthInput 
         label={t("auth.email")}
