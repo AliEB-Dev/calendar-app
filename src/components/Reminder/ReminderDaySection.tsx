@@ -10,7 +10,7 @@ interface ReminderDaySectionProps {
 
 function ReminderDaySection({ title, reminders, onToggle }: ReminderDaySectionProps) {
   return (
-    <section className="flex flex-col gap-3">
+    <section className="flex flex-col gap-3 dark:text-(--color-text-bgdark)">
       <ReminderDayHeader title={title} count={reminders.length} />
 
       {reminders.map((reminder) => (

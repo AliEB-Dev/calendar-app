@@ -13,14 +13,13 @@ function SocialLink({ href, icon: Icon, label }: SocialLinkProps) {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="flex items-center gap-4 rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition hover:bg-gray-50"
-    >
-      
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gray-50">
+      className="flex items-center text-gray-800 gap-4 rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition hover:bg-gray-50 dark:hover:bg-gray-700  dark:bg-(--bg-dark) dark:text-(--color-text-bgdark)"
+    > 
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gray-50  dark:bg-(--bg-dark) shadow-lg border-1">
             <Icon size={25} />
         </div>
         <div className="min-w-0 flex-1">
-            <h3 className="text-sm font-bold text-gray-800">
+            <h3 className="text-sm font-bold ">
                {label}
             </h3>
             <p className="mt-1 truncate text-xs text-(--Primary)">

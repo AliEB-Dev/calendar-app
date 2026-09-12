@@ -5,8 +5,8 @@ function PrivacyContent() {
     const { t } = useTranslation();
 
     return (
-        <article className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-gray-800">
+        <article className="max-w-3xl text-gray-800 mx-auto  dark:text-(--color-text-bgdark)">
+            <h2 className="text-2xl font-bold ">
                 {t("privacy.title")}
             </h2>
 
@@ -14,7 +14,7 @@ function PrivacyContent() {
                 {t("privacy.lastUpdated")}
             </p>
 
-            <div className="mt-8 space-y-7 text-sm leading-7 text-gray-600">
+            <div className="mt-8 space-y-7 text-sm leading-7 text-gray-600 dark:text-(--color-text-bgdark)">
                 <AboutSection title={t("privacy.yourPrivacyTitle")}>
                     {t("privacy.yourPrivacyText")}
                 </AboutSection>

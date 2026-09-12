@@ -4,7 +4,7 @@ import FloatingButton from "./FloatingButton";
 function Menu() {
   return (
     <>
-    <div  dir="rtl" className="fixed bottom-3  right-4 w-11/12 border rounded-2xl border-slate-200  bg-white lg:hidden md:w-9/12 md:right-25 md:bottom-10 md:text-3xl p-3 dark:bg-(--bg-item-dark) dark:border-gray-700 dark:text-(--color-text-bgdark)">
+    <div  dir="rtl" className="fixed bottom-3  right-4 w-11/12 border rounded-2xl border-slate-200  bg-white lg:hidden md:w-8/12 md:right-35 md:bottom-10 md:text-3xl p-3 dark:bg-(--bg-item-dark) dark:border-gray-700 dark:text-(--color-text-bgdark)">
         <nav className="max-w-md mx-auto">
             <ul className="flex gap-3 justify-around items-center">
                {menuItems.map((item, index) => {

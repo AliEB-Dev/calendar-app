@@ -14,7 +14,7 @@ interface ReminderCardProps {
 
 function ReminderCard({type,time,title,subtitle,completed = false , color , onToggle}:ReminderCardProps){
     return(
-      <div className="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm md:mx-5">
+      <div className="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm md:mx-15 dark:bg-(--bg-item-dark) dark:border-gray-700 dark:text-(--color-text-bgdark)">
         
         <div className="flex items-center gap-3">
           {type === "task" ? (

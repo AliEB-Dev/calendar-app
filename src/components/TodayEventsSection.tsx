@@ -17,23 +17,23 @@ const todayEvents = useAppSelector(selectTodayEvents).slice(0,3)
             </Link>
         </div>
         {todayEvents.length === 0 ? (
-            <div className="flex justify-center p-5">
+            <div className="flex justify-center p-5 dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark)">
                 <p className="text-gray-400 text-[15px]">{t('home.noEventsToday')}</p>
             </div>
         ) : (
             <div className="flex flex-col gap-2 px-3 py-2">
                 {todayEvents.map((event)=>(
-                    <div key={event.id} className="flex items-center gap-3 border border-gray-100 rounded-xl px-3 py-2.5 bg-gray-50">
+                    <div key={event.id} className="flex items-center text-gray-800 gap-3 border border-gray-100 rounded-xl px-3 py-2.5 bg-gray-50  dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark) dark:border-gray-700">
                         <span className="w-2 h-2 rounded-full shrink-0 " style={{backgroundColor: event.color}}/>
                         <div className="flex flex-col flex-1 min-w-0">
-                            <span className="text-sm font-bold text-gray-800 truncate">
+                            <span className="text-sm font-bold  truncate">
                                 {event.title}
                             </span>
                             {event.location && (
                                 <span className="text-xs text-gray-400 truncate">{event.location}</span>
                             )}
                         </div>
-                        <span className="text-xs text-gray-400 truncate">
+                        <span className="text-xs text-gray-400  truncate">
                             {event.allDay ? "تمام روز" : event.startTime}
                         </span>
                     </div>

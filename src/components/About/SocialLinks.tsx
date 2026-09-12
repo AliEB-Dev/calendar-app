@@ -10,7 +10,7 @@ function SocialLinks() {
   return (
     <section className="mt-8">
 
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-3 ">
         <SocialLink
           href="https://github.com/AliEB-Dev"
           icon={IoLogoGithub}

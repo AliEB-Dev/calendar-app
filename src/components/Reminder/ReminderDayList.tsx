@@ -18,7 +18,7 @@ function ReminderDayList({groups,onToggle}: ReminderDayListProps) {
     )
   }
   return (
-    <div className="flex flex-col gap-4 mt-5">
+    <div className="flex flex-col gap-4 mt-5 dark:text-(--color-text-bgdark)">
       {groups.map((group)=> (
         <div key={group.title} className="flex flex-col gap-2">
           <h4 className="text-sm font-bold text-gray-600 px-1">{group.title}</h4>

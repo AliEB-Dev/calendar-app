@@ -6,7 +6,7 @@ function Privacy() {
     const { t } = useTranslation();
 
     return (
-        <div className="p-2 md:p-8 mb-5">
+        <div className="p-2 md:p-8 mb-5  ">
             <PageHeader title={t("privacy.title")} />            
             <PrivacyContent />
         </div>

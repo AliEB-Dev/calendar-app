@@ -11,7 +11,7 @@ function ReminderDayHeader({
 }: ReminderDayHeaderProps) {
   const { t } = useTranslation()
   return (
-    <div className="flex items-center justify-between px-1">
+    <div className="flex items-center justify-between px-1 ">
 
       <h2 className="text-xl font-bold">
         {title}

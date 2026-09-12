@@ -25,13 +25,13 @@ function TodayTasksSection(){
 
             {
                 todayTasks.length === 0 ? (
-                    <div className="flex justify-center p-5 ">
-                        <p className="text-gray-400 text-[15px]">{t("home.noTasksToday")}</p>
+                    <div className="flex justify-center p-5 text-gray-400 dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark)">
+                        <p className="text-[15px]">{t("home.noTasksToday")}</p>
                     </div>
                 ):(
                     <div className="flex flex-col gap-2 px-4 py-2">
                         {todayTasks.map((task)=>(
-                            <div key={task.id} className="flex items-center gap-3 border border-gray-100 rounded-xl px-3 py-2.5 bg-gray-50 ">
+                            <div key={task.id} className="flex items-center gap-3 border border-gray-100 rounded-xl px-3 py-2.5 bg-gray-50 dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark) dark:border-gray-700">
                                 <button type="button" onClick={()=> handleToggle(task.id,task.status)} className="shrink-0">
                                     {task.status === "done" ? (
                                         <IoCheckmarkCircleOutline size={22} className="text-green-500" />

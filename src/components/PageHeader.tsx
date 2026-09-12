@@ -15,7 +15,7 @@ function PageHeader({ title }: PageHeaderProps) {
     };
 
     return (
-        <div className="relative flex items-center justify-center mb-5 py-3 shadow-sm">
+        <div className="relative flex items-center justify-center mb-5 py-3 shadow-sm dark:text-(--color-text-bgdark)">
             <h1 className="text-xl font-bold">
                 {title}
             </h1>
