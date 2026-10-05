@@ -21,7 +21,7 @@ function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/help" element={<Help />} />
           
-        <Route element={<MainLayout/>}>
+        <Route element={<MainLayout/>} >
           <Route path='/' element={<Home/>}/>
           <Route path='/calendar' element={<Calendar/>}/>
           <Route path='/reminder' element={<Reminder/>}/>

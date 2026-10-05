@@ -9,8 +9,8 @@ function FloatingButton() {
       type="button"
       onClick={() => dispatch(openAddItemModal())}
       className="
-        absolute -top-14 right-0.5
-        w-14 h-14
+        absolute -top-14 -right-7.5
+        w-12 h-12
         rounded-full
         bg-(--Primary)
         border-4 border-white
@@ -20,10 +20,10 @@ function FloatingButton() {
         transition-transform duration-200
         hover:scale-115
         active:scale-95
-      
+        lg:top-29 lg:right-0
       "
     >
-      <FaPlus size={30} className="text-white" />
+      <FaPlus size={20} className="text-white" />
     </button>
   );
 }

@@ -17,17 +17,17 @@ export const menuItems: MenuItemProps[] = [
     icon: IoHome,
   },
   {
-    titleKey: "navigation.calendar",
-    path: "/calendar",
-    icon: IoCalendar,
+    titleKey: "navigation.mySchedule",
+    path: "/reminder",
+    icon: HiCalendarDateRange
   },
   {
     icon: FaPlus,
   },
   {
-    titleKey: "navigation.mySchedule",
-    path: "/reminder",
-    icon: HiCalendarDateRange
+    titleKey: "navigation.calendar",
+    path: "/calendar",
+    icon: IoCalendar,
   },
   {
     titleKey: "navigation.settings",
