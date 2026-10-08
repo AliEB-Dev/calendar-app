@@ -15,7 +15,7 @@ function TodayTasksSection(){
     }
     const { t } = useTranslation()
     return (
-        <section className="flex flex-col mt-3 p-2 bg-white rounded-2xl shadow-2xs md:mx-5 dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark)">
+        <section className="flex flex-col w-11/12 lg:w-9/12  mt-3 p-2 bg-white rounded-2xl shadow-2xs md:mx-5 dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark)">
             <div className="flex justify-between px-3">
                 <p className="text-[15px]">{t("home.todayTasks")}</p>
                 <Link to="/reminder" className="text-(--Primary) hover:text-blue-700">

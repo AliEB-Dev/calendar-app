@@ -53,12 +53,12 @@ export default function ReminderPage() {
  
   return (
     
-      <div className="p-2 mb-15">
+      <div className="w-full p-2 mb-15 flex flex-col justify-center items-center">
         <HeaderPage isSearch Icon={IoCalendarOutline} title="reminder.pageTitle"/>
         <ReminderFilterBar selected={filter} onChange={setFilter} />
 
         
-           <div className='flex gap-2 mt-7 mr-2 justify-center'>
+           <div className='flex gap-2 mt-7 mr-2 justify-center lg:w-6/12'>
           {
             homeStats.map((item,index)=>(
             <HomeStatCard

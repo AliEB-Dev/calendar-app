@@ -5,7 +5,7 @@ import AddItemModal from "../components/shared/AddItemModal";
 function MainLayout() {
   return (
     <div className="min-h-screen relative pb-15">
-        <main>
+        <main className="flex justify-center">
             <Outlet />
         </main>
 

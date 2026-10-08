@@ -25,9 +25,7 @@ function Home() {
     return <Navigate to="/login" replace />
   }
   return (
-    <>
-    
-    <div className="w-full h-screen p-2 pt-5  dark:bg-(--bg-dark) dark:text-(--color-text-bgdark) mb-10">
+    <div className="w-full flex flex-col items-center h-screen -2 pt-5  dark:bg-(--bg-dark) dark:text-(--color-text-bgdark) mb-13 lg:w-10/12 ">
       <header>
         <WelcomeCard/>
         <div className='flex gap-2 mt-7 mr-2 justify-center '>
@@ -47,7 +45,6 @@ function Home() {
       <TodayEventsSection/>
       <TodayTasksSection/>
     </div>
-    </>
   )
 }
 

@@ -23,7 +23,7 @@ const ReminderFilterBar: React.FC<ReminderFilterBarProps> = ({
 }) => {
   const {t} = useTranslation()
   return (
-    <div className="flex justify-around items-center gap-2 rounded-2xl bg-white p-2 shadow-sm md:mx-10 dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark)">
+    <div className="flex  lg:w-6/12 justify-around items-center gap-2 rounded-2xl bg-white p-2 shadow-sm md:mx-10 dark:bg-(--bg-item-dark) dark:text-(--color-text-bgdark)">
       {filters.map((filter) => (
         <button
           key={filter.value}

@@ -10,7 +10,7 @@ interface HeaderPageProps {
 function HeaderPage({isSearch,Icon,title}:HeaderPageProps) {
   const {t} = useTranslation()
   return (
-    <header className="flex dark:text-(--color-text-bgdark)">
+    <header className="flex dark:text-(--color-text-bgdark) lg:w-6/12">
         <div className="flex items-center">
           {isSearch && <CiSearch size={30} className="text-purple-700"/>} 
        </div>
